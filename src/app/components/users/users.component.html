@@ -1,0 +1,44 @@
+<div class="card m-5 p-3">
+    <div class="card-body">
+        <table  class="table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of allUsers">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.address.street }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-group btn-group-justified">
+        <a class="btn btn-default">
+            <button type="submit" class="btn btn-default" (click)="addRow()">Creation</button>
+        </a>
+    </div>
+    <div class="btn-group btn-group-justified">
+        <a class="btn btn-default">
+            <button type="submit" class="btn btn-default" (click)="removeRow()">Remove</button>
+        </a>
+    </div>
+    <p>
+        <button type="button"
+               
+                (click)="displayToConsole(dataTableDirective)" >
+          Display the DataTable instance in the console
+        </button>
+      </p>
+      <p>
+       
